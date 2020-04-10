@@ -8,6 +8,6 @@ void sendList(int sock, std::list<std::string> &l) {
 
 std::list<std::string> recvList(int sock) {
     // TODO: recv and reconstruct the list
-    // Do this one character at a time.
+    // Remember: recv(socket_fd, pointer_to_thing, max_bytes_to_recv, 0 or MSG_WAITALL)
     return std::list<std::string>();
 }
