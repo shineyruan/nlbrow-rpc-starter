@@ -4,14 +4,15 @@
 
 #include "server.h"
 
-#include <iostream>
-#include <thread>
+#include <netdb.h>
+#include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
 #include <unistd.h>
-#include <netdb.h>
-#include <netinet/in.h>
+
+#include <iostream>
+#include <thread>
 
 using namespace std;
 
@@ -31,13 +32,13 @@ int main(int argc, char** argv) {
     addr.sin_addr.s_addr = INADDR_ANY;
     addr.sin_port = htons(port);
 
-    if (::bind(sockfd, (sockaddr *) &addr, sizeof(addr)) == -1) {
+    if (::bind(sockfd, (sockaddr*)&addr, sizeof(addr)) == -1) {
         perror("Error in bind!");
         return -1;
     }
 
     socklen_t length = sizeof(addr);
-    if (getsockname(sockfd, (sockaddr *) &addr, &length) == -1) {
+    if (getsockname(sockfd, (sockaddr*)&addr, &length) == -1) {
         perror("Error getting port of socket");
         return -1;
     }
@@ -58,7 +59,7 @@ int main(int argc, char** argv) {
 }
 
 void append(char c, std::list<std::string>& list) {
-    for(std::string& s : list) {
+    for (std::string& s : list) {
         s.push_back(c);
     }
 }

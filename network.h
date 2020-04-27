@@ -1,16 +1,17 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
-#include <string>
-#include <list>
-#include <iostream>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <sys/socket.h>
-#include <unistd.h>
 #include <netdb.h>
 #include <netinet/in.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <unistd.h>
+
+#include <iostream>
+#include <list>
+#include <string>
 
 /*
  * Need to do four things:

@@ -1,6 +1,5 @@
 #include "client_library.h"
 
-
 void printList(std::list<std::string> &l) {
     for (std::string s : l) {
         std::cout << s << std::endl;
@@ -22,7 +21,7 @@ std::list<std::string> client_append(int port, std::list<std::string> &l, char c
     memcpy(&(addr.sin_addr), host->h_addr, host->h_length);
     addr.sin_port = htons(port);
 
-    if(connect(sockfd, (sockaddr *) &addr, sizeof(addr)) == -1) {
+    if (connect(sockfd, (sockaddr *)&addr, sizeof(addr)) == -1) {
         perror("error in connect!");
         throw std::runtime_error("error in connect!");
     }

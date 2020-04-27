@@ -1,9 +1,9 @@
 #ifndef CLIENT_LIBRARY_H
 #define CLIENT_LIBRARY_H
 
-#include "network.h"
-
 #include <stdexcept>
+
+#include "network.h"
 
 void printList(std::list<std::string> &l);
 
